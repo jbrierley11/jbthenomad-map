@@ -998,7 +998,8 @@ function selectCountry(name, feature, el) {
   document.getElementById("stat-year").textContent = data.year;
  
   setBreadcrumb({ region: currentRegion, country: name });
- 
+
+  console.log('Country data:', name, data);
   if (data.hasStates) {
     // Show state sub-panel hint inside info panel
     document.getElementById("panel-btn").textContent = "Select a State";
