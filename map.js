@@ -88,7 +88,7 @@ const countryStates = {
   "Brazil": {
     geoJsonUrl: "https://jbrierley11.github.io/jbthenomad-map/brazil-states.json",
     type: "geojson",
-    nameProperty: "name",
+    nameProperty: "geometry_name",
     visitedStates: ["Maranhão", "Ceará", "Rio de Janeiro", "Amazonas"],
     states: {
       "Maranhão": {
