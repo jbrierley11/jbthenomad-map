@@ -1008,7 +1008,7 @@ function selectCountry(name, feature, el) {
     regionPanel.classList.remove("visible");
     statePanel.classList.remove("visible");
     hint.classList.add("hidden");
-    console.log('loadStates called for:', countryName);
+    console.log('loadStates called for:', name);
     loadStates(name, feature);
   } else {
     document.getElementById("panel-btn").textContent = "Explore Gallery";
