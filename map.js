@@ -86,7 +86,7 @@ const countryStates = {
     }
   },
   "Brazil": {
-    geoJsonUrl: "https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/brazil-states.geojson",
+    geoJsonUrl: "https://jbrierley11.github.io/jbthenomad-map/brazil-states.json",
     type: "geojson",
     nameProperty: "name",
     visitedStates: ["Maranhão", "Ceará", "Rio de Janeiro", "Amazonas"],
