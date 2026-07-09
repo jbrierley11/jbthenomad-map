@@ -1003,7 +1003,7 @@ function selectCountry(name, feature, el) {
   if (data.hasStates) {
     // Show state sub-panel hint inside info panel
     document.getElementById("panel-btn").textContent = "Select a State";
-    document.getElementById("panel-btn").onclick = null;
+    document.getElementById("panel-btn").onclick = () => loadStates(name, null);
     infoPanel.classList.add("visible");
     regionPanel.classList.remove("visible");
     statePanel.classList.remove("visible");
