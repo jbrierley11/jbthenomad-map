@@ -1040,7 +1040,11 @@ async function loadStates(countryName, countryFeature) {
   if (stateGeoCache[countryName]) {
     features = stateGeoCache[countryName];
   } else {
-    const raw = await fetch(cfg.geoJsonUrl).then(r => r.json());
+    const response = await fetch(cfg.geoJsonUrl);
+    console.log('Status:', response.status);
+    const raw = await response.json();
+    console.log('Raw data:', raw);
+    console.log('First feature properties:', raw.features[0].properties);
     if (cfg.type === "topojson") {
       features = topojson.feature(raw, raw.objects[cfg.objectName]).features;
       // Attach name via nameMap
