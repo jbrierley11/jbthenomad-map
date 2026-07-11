@@ -122,7 +122,7 @@
 
 #jbn-map-root #breadcrumb {
   position: fixed;
-  top: 80px;
+  top: 160px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
