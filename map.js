@@ -1285,3 +1285,5 @@ document.addEventListener("keydown", e => {
     resetToRegion();
   } else if (currentRegion) {
     resetView();
+  }
+});
