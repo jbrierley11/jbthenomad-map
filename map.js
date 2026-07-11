@@ -11,7 +11,7 @@ const regions = {
     bounds: [[-92, 7], [-64, 26]]
   },
   "South America": {
-    countries: ["Brazil", "Chile", "Argentina", "Peru", "Colombia", "Ecuador", "Bolivia", "Uruguay"],
+    countries: ["Brasil", "Chile", "Argentina", "Peru", "Colombia", "Ecuador", "Bolivia", "Uruguay"],
     visited: true,
     bounds: [[-82, -56], [-32, 13]]
   },
@@ -41,7 +41,7 @@ const regions = {
     bounds: [[113, -47], [179, -8]]
   }
 };
- 
+
 // ─── State-level data (USA + Brasil) ──────────────────────────────────────
 // Each country with states has: states[stateName] = { desc, photos, year, pins[] }
 // GeoJSON loaded on demand when country is selected.
@@ -85,10 +85,10 @@ const countryStates = {
       }
     }
   },
-  "Brazil": {
-    geoJsonUrl: "https://jbrierley11.github.io/jbthenomad-map/brazil-states.json",
+  "Brasil": {
+    geoJsonUrl: "https://jbrierley11.github.io/jbthenomad-map/brasil-states.json",
     type: "geojson",
-    nameProperty: "geometry_name",
+    nameProperty: "name",
     visitedStates: ["Maranhão", "Ceará", "Rio de Janeiro", "Amazonas"],
     states: {
       "Maranhão": {
@@ -102,7 +102,7 @@ const countryStates = {
         desc: "The northeast coast at its most raw — Jericoacoara's sand streets and Preá's kite-filled skies, all under a light that makes every frame sing.",
         photos: 134, year: 2023,
         pins: [
-          { name: "Fortaleza", coords: [-38.5434, -3.7172], desc: "The gateway to Brazil's northeast — frenetic, colourful, alive." },
+          { name: "Fortaleza", coords: [-38.5434, -3.7172], desc: "The gateway to Brasil's northeast — frenetic, colourful, alive." },
           { name: "Jericoacoara", coords: [-40.5128, -2.7975], desc: "A car-free village buried in dunes at the edge of the world." },
           { name: "Preá", coords: [-40.4667, -2.7500], desc: "Kitesurfers threading between dunes and lagoons in constant wind." }
         ]
@@ -124,10 +124,10 @@ const countryStates = {
     }
   }
 };
- 
+
 // ─── Country data ──────────────────────────────────────────────────────────
 const visitedCountries = {
- 
+
   // ── North America ──
   "United States": {
     label: "North America",
@@ -155,7 +155,7 @@ const visitedCountries = {
     photos: 54, regions: 1, year: 2022,
     pins: [{ name: "Nassau", coords: [-77.3504, 25.0443], desc: "Pastel facades and the clearest harbour water" }]
   },
- 
+
   // ── Central America & Caribbean ──
   "Dominican Republic": {
     label: "Central America & Caribbean",
@@ -222,11 +222,11 @@ const visitedCountries = {
       { name: "Casco Viejo", coords: [-79.5353, 8.9519], desc: "Crumbling colonial beauty by the Pacific" }
     ]
   },
- 
+
   // ── South America ──
-  "Brazil": {
+  "Brasil": {
     label: "South America",
-    desc: "The Amazon's impossible density and the northeast's surreal dune lagoons — Brazil is nature at full volume.",
+    desc: "The Amazon's impossible density and the northeast's surreal dune lagoons — Brasil is nature at full volume.",
     photos: 457, regions: 4, year: 2023, hasStates: true, pins: []
   },
   "Colombia": {
@@ -289,7 +289,7 @@ const visitedCountries = {
     photos: 61, regions: 1, year: 2022,
     pins: [{ name: "Colonia del Sacramento", coords: [-57.8453, -34.4626], desc: "A Portuguese colonial quarter frozen beautifully in time" }]
   },
- 
+
   // ── Europe ──
   "Ireland": {
     label: "Europe · West",
@@ -479,7 +479,7 @@ const visitedCountries = {
       { name: "Pamukkale", coords: [29.1208, 37.9212], desc: "Thermal travertine terraces glowing white" }
     ]
   },
- 
+
   // ── Africa ──
   "Morocco": {
     label: "Africa · North",
@@ -587,7 +587,7 @@ const visitedCountries = {
       { name: "Kruger NP", coords: [31.4869, -23.9884], desc: "South Africa's great wildlife reserve" }
     ]
   },
- 
+
   // ── West / Central Asia & Middle East ──
   "UAE": {
     label: "Middle East",
@@ -706,7 +706,7 @@ const visitedCountries = {
       { name: "Almaty", coords: [76.8512, 43.2220], desc: "Mountains rising directly above the city" }
     ]
   },
- 
+
   // ── East / Southeast Asia ──
   "Japan": {
     label: "Asia · East",
@@ -738,14 +738,14 @@ const visitedCountries = {
     ]
   }
 };
- 
+
 // ─── ISO numeric ID → country name ────────────────────────────────────────
 const countryNameMap = {
   "840": "United States", "124": "Canada", "484": "Mexico", "044": "Bahamas",
   "214": "Dominican Republic", "388": "Jamaica", "192": "Cuba",
   "320": "Guatemala", "222": "El Salvador", "340": "Honduras",
   "558": "Nicaragua", "188": "Costa Rica", "591": "Panama",
-  "076": "Brazil", "170": "Colombia", "218": "Ecuador", "604": "Peru",
+  "076": "Brasil", "170": "Colombia", "218": "Ecuador", "604": "Peru",
   "068": "Bolivia", "152": "Chile", "032": "Argentina", "858": "Uruguay",
   "372": "Ireland", "826": "United Kingdom", "620": "Portugal",
   "724": "Spain", "020": "Andorra", "250": "France", "492": "Monaco",
@@ -763,7 +763,7 @@ const countryNameMap = {
   "417": "Kyrgyzstan", "398": "Kazakhstan",
   "392": "Japan", "356": "India", "764": "Thailand"
 };
- 
+
 // ─── Country → world region ────────────────────────────────────────────────
 const visitedCountryToRegion = {
   "United States": "North America", "Canada": "North America",
@@ -773,7 +773,7 @@ const visitedCountryToRegion = {
   "Guatemala": "Central America & Caribbean", "El Salvador": "Central America & Caribbean",
   "Honduras": "Central America & Caribbean", "Nicaragua": "Central America & Caribbean",
   "Costa Rica": "Central America & Caribbean", "Panama": "Central America & Caribbean",
-  "Brazil": "South America", "Colombia": "South America", "Ecuador": "South America",
+  "Brasil": "South America", "Colombia": "South America", "Ecuador": "South America",
   "Peru": "South America", "Bolivia": "South America", "Chile": "South America",
   "Argentina": "South America", "Uruguay": "South America",
   "Ireland": "Europe", "United Kingdom": "Europe", "Portugal": "Europe",
@@ -803,41 +803,41 @@ const svg = d3.select("#map-svg");
 const container = document.getElementById("map-container");
 let width = container.clientWidth;
 let height = container.clientHeight;
- 
+
 const projection = d3.geoNaturalEarth1()
   .scale(width / 6.2)
   .translate([width / 2, height / 2]);
- 
+
 const path = d3.geoPath().projection(projection);
 const g = svg.append("g");
- 
+
 // Sphere
 g.append("path").datum({type:"Sphere"}).attr("class","sphere").attr("d", path);
 // Graticule
 g.append("path").datum(d3.geoGraticule()()).attr("class","graticule").attr("d", path);
- 
+
 // ─── State ─────────────────────────────────────────────────────────────────
 let currentRegion = null;
 let currentCountry = null;
 let currentState   = null;
 let stateGeoCache  = {}; // cache fetched GeoJSON per country
- 
+
 const tooltip   = document.getElementById("tooltip");
 const infoPanel = document.getElementById("info-panel");
 const hint      = document.getElementById("hint");
 const regionPanel = document.getElementById("region-panel");
- 
+
 // State panel
 const stateLayer = g.append("g").attr("id", "state-layer");
 const statePanel = document.getElementById("state-panel");
- 
+
 // ─── Load world map ────────────────────────────────────────────────────────
 fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
   .then(r => r.json())
   .then(world => {
     const countries = topojson.feature(world, world.objects.countries);
     const borders   = topojson.mesh(world, world.objects.countries, (a,b) => a !== b);
- 
+
     g.selectAll(".country")
       .data(countries.features)
       .enter().append("path")
@@ -883,17 +883,17 @@ fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
           if (regionName && regions[regionName]?.visited) selectRegion(regionName);
         }
       });
- 
+
     g.append("path").datum(borders)
       .attr("fill","none").attr("stroke","#2a2520").attr("stroke-width",0.3).attr("d",path);
- 
+
     // Country-level pins (non-state countries)
     Object.entries(visitedCountries).forEach(([country, data]) => {
       if (data.hasStates) return; // pins added when state loads
       data.pins.forEach(pin => addPin(pin, country, null));
     });
   });
- 
+
 // ─── Add a pin to the SVG ──────────────────────────────────────────────────
 function addPin(pin, country, stateName) {
   const [x, y] = projection(pin.coords);
@@ -914,26 +914,26 @@ function addPin(pin, country, stateName) {
      .on("mouseout", function() { tooltip.style.opacity="0"; })
      .on("click", function() { openPinOverlay(country, pin); });
 }
- 
+
 // ─── Country name lookup ───────────────────────────────────────────────────
 function getCountryName(id) {
   const idStr = String(id).padStart(3, '0');
   return countryNameMap[idStr] || countryNameMap[String(id)] || "";
 }
- 
+
 // ─── Select region ──────────────────────────────────────────────────────────
 function selectRegion(regionName) {
   currentRegion  = regionName;
   currentCountry = null;
   currentState   = null;
- 
+
   setBreadcrumb({ region: regionName });
- 
+
   const visitedInRegion = Object.keys(visitedCountries).filter(c => visitedCountryToRegion[c] === regionName);
   document.getElementById("rp-title").textContent = regionName;
   document.getElementById("rp-count").textContent = visitedInRegion.length;
   document.getElementById("rp-photos").textContent = visitedInRegion.reduce((s,c) => s + visitedCountries[c].photos, 0);
- 
+
   const listEl = document.getElementById("rp-countries");
   listEl.innerHTML = "";
   visitedInRegion.forEach(c => {
@@ -947,47 +947,47 @@ function selectRegion(regionName) {
     };
     listEl.appendChild(item);
   });
- 
+
   regionPanel.classList.add("visible");
   infoPanel.classList.remove("visible");
   statePanel.classList.remove("visible");
   hint.classList.add("hidden");
   stateLayer.selectAll("*").remove();
- 
+
   d3.selectAll(".country").classed("dimmed", function(d) {
     return visitedCountryToRegion[getCountryName(d.id)] !== regionName;
   });
   d3.selectAll(".country.visited").classed("region-active", function(d) {
     return visitedCountryToRegion[getCountryName(d.id)] === regionName;
   });
- 
+
   d3.selectAll(".pin-group").style("display","none");
   zoomToBounds(regions[regionName].bounds);
 }
- 
+
 // ─── Reset to region ────────────────────────────────────────────────────────
 function resetToRegion() {
   if (!currentRegion) return;
   currentCountry = null;
   currentState   = null;
- 
+
   infoPanel.classList.remove("visible");
   statePanel.classList.remove("visible");
   regionPanel.classList.add("visible");
   stateLayer.selectAll("*").remove();
- 
+
   d3.selectAll(".country").classed("active", false);
   d3.selectAll(".pin-group").style("display","none");
   setBreadcrumb({ region: currentRegion });
   zoomToBounds(regions[currentRegion].bounds);
 }
- 
+
 // ─── Select country ─────────────────────────────────────────────────────────
 function selectCountry(name, feature, el) {
   currentCountry = name;
   currentState   = null;
   const data = visitedCountries[name];
- 
+
   const titleParts = name.split(" ");
   document.getElementById("panel-label").textContent = data.label;
   document.getElementById("panel-title").innerHTML =
@@ -996,19 +996,16 @@ function selectCountry(name, feature, el) {
   document.getElementById("stat-photos").textContent = data.photos;
   document.getElementById("stat-regions").textContent = data.regions;
   document.getElementById("stat-year").textContent = data.year;
- 
+
   setBreadcrumb({ region: currentRegion, country: name });
 
-  console.log('Country data:', name, data);
   if (data.hasStates) {
-    // Show state sub-panel hint inside info panel
     document.getElementById("panel-btn").textContent = "Select a State";
-    document.getElementById("panel-btn").onclick = () => loadStates(name, null);
+    document.getElementById("panel-btn").onclick = () => loadStates(name, feature);
     infoPanel.classList.add("visible");
     regionPanel.classList.remove("visible");
     statePanel.classList.remove("visible");
     hint.classList.add("hidden");
-    console.log('loadStates called for:', name);
     loadStates(name, feature);
   } else {
     document.getElementById("panel-btn").textContent = "Explore Gallery";
@@ -1017,60 +1014,59 @@ function selectCountry(name, feature, el) {
     regionPanel.classList.remove("visible");
     statePanel.classList.remove("visible");
     hint.classList.add("hidden");
- 
+
     d3.selectAll(".pin-group").style("display", function() {
       return this.dataset.country === name && !this.dataset.state ? null : "none";
     }).classed("visible", function() {
       return this.dataset.country === name && !this.dataset.state;
     });
- 
+
     zoomToFeature(feature);
   }
 }
- 
+
 // ─── Load state boundaries ─────────────────────────────────────────────────
 async function loadStates(countryName, countryFeature) {
   stateLayer.selectAll("*").remove();
   d3.selectAll(".pin-group").style("display","none");
- 
+
   const cfg = countryStates[countryName];
   if (!cfg) return;
- 
-  zoomToFeature(countryFeature);
- 
+
+  if (countryFeature) zoomToFeature(countryFeature);
+
   let features;
   if (stateGeoCache[countryName]) {
     features = stateGeoCache[countryName];
   } else {
-    const response = await fetch(cfg.geoJsonUrl);
-    console.log('Status:', response.status);
-    const raw = await response.json();
-    console.log('Raw data:', raw);
-    console.log('First feature properties:', raw.features[0].properties);
-    if (cfg.type === "topojson") {
-      features = topojson.feature(raw, raw.objects[cfg.objectName]).features;
-      // Attach name via nameMap
-      features.forEach(f => {
-        const fips = String(f.id).padStart(2,"0");
-        f.properties._name = cfg.nameMap[fips] || null;
+    try {
+      const raw = await fetch(cfg.geoJsonUrl).then(r => r.json());
+      if (cfg.type === "topojson") {
+        features = topojson.feature(raw, raw.objects[cfg.objectName]).features;
+        features.forEach(f => {
+          const fips = String(f.id).padStart(2,"0");
+          f.properties._name = cfg.nameMap[fips] || null;
+        });
+      } else {
+        features = raw.features;
+        features.forEach(f => {
+          f.properties._name = f.properties[cfg.nameProperty] || null;
+        });
+      }
+      stateGeoCache[countryName] = features;
+      Object.entries(cfg.states).forEach(([stateName, stateData]) => {
+        stateData.pins.forEach(pin => addPin(pin, countryName, stateName));
       });
-    } else {
-      features = raw.features;
-      features.forEach(f => {
-        f.properties._name = f.properties[cfg.nameProperty] || null;
-      });
+    } catch(err) {
+      console.error('Failed to load state boundaries:', err);
+      return;
     }
-    stateGeoCache[countryName] = features;
-    // Pre-add pins for all states
-    Object.entries(cfg.states).forEach(([stateName, stateData]) => {
-      stateData.pins.forEach(pin => addPin(pin, countryName, stateName));
-    });
   }
- 
+
   const visitedSet = cfg.visitedStates
     ? new Set(cfg.visitedStates)
     : new Set(Object.keys(cfg.states));
- 
+
   stateLayer.selectAll(".state-path")
     .data(features)
     .enter().append("path")
@@ -1101,19 +1097,19 @@ async function loadStates(countryName, countryFeature) {
       selectState(countryName, sName, d, this);
     });
 }
- 
+
 // ─── Select state ───────────────────────────────────────────────────────────
 function selectState(countryName, stateName, feature, el) {
   currentState = stateName;
   const cfg  = countryStates[countryName];
   const data = cfg.states[stateName];
   if (!data) return;
- 
+
   // Highlight selected state
   stateLayer.selectAll(".state-path").classed("state-active", function(d) {
     return d.properties._name === stateName;
   }).classed("state-hover", false);
- 
+
   // State panel
   document.getElementById("sp-label").textContent = countryName + " · State";
   const titleParts = stateName.split(" ");
@@ -1123,18 +1119,18 @@ function selectState(countryName, stateName, feature, el) {
   document.getElementById("sp-photos").textContent = data.photos;
   document.getElementById("sp-year").textContent = data.year;
   document.getElementById("sp-btn").onclick = () => openStateOverlay(countryName, stateName);
- 
+
   statePanel.classList.add("visible");
   infoPanel.classList.remove("visible");
   setBreadcrumb({ region: currentRegion, country: countryName, state: stateName });
- 
+
   // Show pins for this state
   d3.selectAll(".pin-group").style("display", function() {
     return this.dataset.country === countryName && this.dataset.state === stateName ? null : "none";
   }).classed("visible", function() {
     return this.dataset.country === countryName && this.dataset.state === stateName;
   });
- 
+
   // Zoom to state bounds
   const [[x0,y0],[x1,y1]] = path.bounds(feature);
   const dx = x1-x0, dy = y1-y0;
@@ -1144,30 +1140,30 @@ function selectState(countryName, stateName, feature, el) {
   g.transition().duration(800).ease(d3.easeCubicInOut)
    .attr("transform", `translate(${tx},${ty}) scale(${scale})`);
 }
- 
+
 // ─── Breadcrumb helper ─────────────────────────────────────────────────────
 function setBreadcrumb({ region, country, state } = {}) {
   const bcWorld   = document.getElementById("bc-world");
   const bcRegion  = document.getElementById("bc-region");
   const bcCountry = document.getElementById("bc-country");
   const bcState   = document.getElementById("bc-state");
- 
+
   bcWorld.classList.toggle("active", !region && !country && !state);
- 
+
   if (region) {
     bcRegion.textContent = region; bcRegion.style.display = "block";
     bcRegion.classList.toggle("active", !country && !state);
   } else {
     bcRegion.style.display = "none";
   }
- 
+
   if (country) {
     bcCountry.textContent = country; bcCountry.style.display = "block";
     bcCountry.classList.toggle("active", !state);
   } else {
     bcCountry.style.display = "none";
   }
- 
+
   if (state) {
     bcState.textContent = state; bcState.style.display = "block";
     bcState.classList.add("active");
@@ -1175,7 +1171,7 @@ function setBreadcrumb({ region, country, state } = {}) {
     bcState.style.display = "none";
   }
 }
- 
+
 // ─── Zoom helpers ────────────────────────────────────────────────────────────
 function zoomToFeature(feature) {
   const [[x0,y0],[x1,y1]] = path.bounds(feature);
@@ -1186,7 +1182,7 @@ function zoomToFeature(feature) {
   g.transition().duration(850).ease(d3.easeCubicInOut)
    .attr("transform", `translate(${tx},${ty}) scale(${scale})`);
 }
- 
+
 function zoomToBounds(bounds) {
   const [[west,south],[east,north]] = bounds;
   const p0 = projection([west,north]);
@@ -1199,7 +1195,7 @@ function zoomToBounds(bounds) {
   g.transition().duration(850).ease(d3.easeCubicInOut)
    .attr("transform", `translate(${tx},${ty}) scale(${scale})`);
 }
- 
+
 // ─── Reset view ────────────────────────────────────────────────────────────
 function resetView() {
   currentRegion=null; currentCountry=null; currentState=null;
@@ -1214,7 +1210,7 @@ function resetView() {
   d3.selectAll(".pin-group").style("display","none").classed("visible",false);
   setBreadcrumb();
 }
- 
+
 // ─── Overlays ──────────────────────────────────────────────────────────────
 function slugify(str) {
   return str.toLowerCase()
@@ -1225,32 +1221,32 @@ function slugify(str) {
     .replace(/[^a-z0-9\s-]/g, '')
     .replace(/\s+/g, '-').replace(/-+/g, '-').trim();
 }
- 
+
 function goToDestination(pinName) {
   const slug = slugify(pinName);
   window.location.href = '/destinations/' + slug;
 }
- 
+
 function openPinOverlay(country, pin) {
   goToDestination(pin.name);
 }
- 
+
 function openCountryOverlay(name) {
   // Country level — no destination page, do nothing
 }
- 
+
 function openStateOverlay(countryName, stateName) {
   // State level — no destination page, do nothing
 }
- 
+
 function closeOverlay() {
   // Navigation handled by goToDestination
 }
- 
+
 document.getElementById("photo-overlay").addEventListener("click", function(e) {
   if (e.target === this) closeOverlay();
 });
- 
+
 // ─── Resize ────────────────────────────────────────────────────────────────
 window.addEventListener("resize", () => {
   width = container.clientWidth; height = container.clientHeight;
@@ -1272,7 +1268,7 @@ window.addEventListener("resize", () => {
     if (x && y) d3.select(this).attr("transform",`translate(${x},${y})`);
   });
 });
- 
+
 // ─── Escape key navigation ─────────────────────────────────────────────────
 document.addEventListener("keydown", e => {
   if (e.key !== "Escape") return;
@@ -1289,5 +1285,3 @@ document.addEventListener("keydown", e => {
     resetToRegion();
   } else if (currentRegion) {
     resetView();
-  }
-});
