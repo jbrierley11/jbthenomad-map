@@ -133,7 +133,7 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(245,240,232,0.35);
-  z-index: 60;
+  z-index: 600;
 }
 
 #jbn-map-root .bc-item { cursor: pointer; transition: color 0.2s; }
