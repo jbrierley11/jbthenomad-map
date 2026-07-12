@@ -192,9 +192,9 @@ function addPin(pin, country) {
     .attr("data-country", country)
     .attr("data-pin", pin.name)
     .style("display", "none");
-  pinG.append("circle").attr("class","pin-pulse").attr("r",6);
-  pinG.append("circle").attr("class","pin-outer").attr("r",7);
-  pinG.append("circle").attr("class","pin-inner").attr("r",3);
+  pinG.append("circle").attr("class","pin-pulse").attr("r",4);
+  pinG.append("circle").attr("class","pin-outer").attr("r",4);
+  pinG.append("circle").attr("class","pin-inner").attr("r",2);
   pinG.on("mouseover", function() { tooltip.style.opacity="1"; tooltip.textContent=pin.name; })
      .on("mousemove", function(event) {
         tooltip.style.left=(event.clientX+14)+"px"; tooltip.style.top=(event.clientY-28)+"px"; })
