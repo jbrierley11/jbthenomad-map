@@ -219,7 +219,7 @@ function selectRegion(regionName) {
   const visitedInRegion = Object.keys(visitedCountries).filter(c => visitedCountryToRegion[c] === regionName);
   document.getElementById("rp-title").textContent = regionName;
   document.getElementById("rp-count").textContent = visitedInRegion.length;
-  document.getElementById("rp-photos").textContent = visitedInRegion.reduce((s,c) => s + visitedCountries[c].photos, 0);
+  document.getElementById("rp-photos").textContent = visitedInRegion.reduce((s,c) => s + visitedCountries[c].pins.length, 0);
 
   const listEl = document.getElementById("rp-countries");
   listEl.innerHTML = "";
