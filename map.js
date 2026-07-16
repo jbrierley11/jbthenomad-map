@@ -279,9 +279,6 @@ function selectCountry(name, feature, el) {
   document.getElementById("panel-title").innerHTML =
     titleParts.slice(0,-1).join(" ") + (titleParts.length>1?" ":"") + "<em>"+titleParts.slice(-1)+"</em>";
   document.getElementById("panel-sub").textContent = data.desc;
-  document.getElementById("stat-photos").textContent = data.photos;
-  document.getElementById("stat-regions").textContent = data.regions;
-  document.getElementById("stat-year").textContent = data.year;
 
   setBreadcrumb({ region: currentRegion, country: name });
 
