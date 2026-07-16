@@ -283,7 +283,14 @@ function selectCountry(name, feature, el) {
   setBreadcrumb({ region: currentRegion, country: name });
 
   document.getElementById("panel-btn").textContent = "Explore Destinations";
-  document.getElementById("panel-btn").onclick = null;
+  const pins = visitedCountries[name].pins;
+  if (pins.length === 1) {
+  document.getElementById("panel-btn").textContent = "Explore Destination";
+  document.getElementById("panel-btn").onclick = () => goToDestination(pins[0].name);
+  } else {
+  document.getElementById("panel-btn").textContent = "Select a Destination";
+  document.getElementById("panel-btn").onclick = () => infoPanel.classList.remove("visible");
+  }
   infoPanel.classList.add("visible");
   regionPanel.classList.remove("visible");
   statePanel.classList.remove("visible");
