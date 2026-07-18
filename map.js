@@ -1,8 +1,8 @@
 // ─── Region definitions ────────────────────────────────────────────────────
 const regions = {
   "North America": {
-    countries: [],
-    visited: false,
+    countries: ["Mexico"],
+    visited: true,
     bounds: [[-140, 14], [-52, 70]]
   },
   "Central America & Caribbean": {
@@ -11,23 +11,23 @@ const regions = {
     bounds: [[-92, 7], [-64, 26]]
   },
   "South America": {
-    countries: ["Bolivia", "Peru"],
+    countries: ["Bolivia", "Peru", "Colombia", "Ecuador"],
     visited: true,
     bounds: [[-82, -56], [-32, 13]]
   },
   "Africa": {
-    countries: ["Egypt"],
+    countries: ["Egypt", "Morocco"],
     visited: true,
     bounds: [[-18, -36], [52, 38]]
   },
   "Europe": {
-    countries: [],
-    visited: false,
+    countries: ["Türkiye"],
+    visited: true,
     bounds: [[-11, 34], [42, 72]]
   },
   "West/Central Asia": {
-    countries: [],
-    visited: false,
+    countries: ["UAE", "Oman"],
+    visited: true,
     bounds: [[24, 0], [90, 52]]
   },
   "East/Southeast Asia": {
@@ -52,12 +52,41 @@ const visitedCountries = {
       { name: "Negril", coords: [-78.3524, 18.2711], desc: "Seven Mile Beach and the western cliffs at golden hour — Jamaica before the resorts figured out how to bottle it." }
     ]
   },
+  "Mexico": {
+    label: "North America",
+    desc: "Colonial silver cities and Pacific coastlines — Mexico rewards the traveller who ventures past the obvious.",
+    photos: 143, regions: 3, year: 2018,
+    pins: [
+      { name: "CDMX", coords: [-99.1332, 19.4326], desc: "One of the great megalopolises, endlessly layered and impossible to exhaust." },
+      { name: "Oaxaca", coords: [-96.7266, 17.0732], desc: "Mezcal, mole, and a city that moves at its own unhurried pace." }
+    ]
+  },
+  "Colombia": {
+    label: "South America",
+    desc: "Cartagena's walled city at golden hour and the Coffee Region's green hillsides — Colombia is transformation made visible.",
+    photos: 134, regions: 3, year: 2022,
+    pins: [
+      { name: "Cartagena", coords: [-75.5144, 10.3910], desc: "Bougainvillea over colonial walls in the Caribbean heat — one of the Americas' great cities." },
+      { name: "Medellin", coords: [-75.5636, 6.2442], desc: "A city that rewrote its own story, built into a valley of perpetual spring." }
+    ]
+  },
+  "Ecuador": {
+    label: "South America",
+    desc: "The Avenue of Volcanoes and Galápagos waters unchanged since Darwin — Ecuador compresses a continent into one small country.",
+    photos: 112, regions: 3, year: 2022,
+    pins: [
+      { name: "Isabela", coords: [-91.0750, -0.9560], desc: "The largest Galápagos island — volcanic craters, penguins, and iguanas sharing the shoreline." },
+      { name: "San Cristóbal", coords: [-89.4340, -0.9058], desc: "The oldest of the Galápagos islands, where sea lions sleep on the benches." },
+      { name: "Santa Cruz", coords: [-90.3515, -0.7393], desc: "The heart of the Galápagos — giant tortoises in the wild, just as Darwin found them." }
+    ]
+  },
   "Bolivia": {
     label: "South America",
     desc: "Salar de Uyuni's mirror of sky and the world's most surreal landscapes — Bolivia asks you to redefine what earth looks like.",
     photos: 98, regions: 2, year: 2022,
     pins: [
-      { name: "Uyuni", coords: [-66.8255, -20.4603], desc: "The world's largest salt flat, perfect mirror at dawn — a place that makes every frame feel inadequate." }
+      { name: "Uyuni", coords: [-66.8255, -20.4603], desc: "The world's largest salt flat, perfect mirror at dawn — a place that makes every frame feel inadequate." },
+      { name: "La Paz", coords: [-68.1193, -16.5000], desc: "The world's highest capital city, perpetually in motion between the mountains." }
     ]
   },
   "Peru": {
@@ -68,12 +97,64 @@ const visitedCountries = {
       { name: "Paracas", coords: [-76.2506, -13.8314], desc: "Rust-red cliffs meeting the Pacific — a collision of extremes that produces something unexpectedly beautiful." }
     ]
   },
+  "Morocco": {
+    label: "Africa · North",
+    desc: "The medinas of Fes and the Sahara at dawn — Morocco is light and shadow in their most theatrical forms.",
+    photos: 218, regions: 5, year: 2021,
+    pins: [
+      { name: "Casablanca", coords: [-7.5898, 33.5731], desc: "Morocco's beating commercial heart — the Hassan II Mosque rising from the Atlantic's edge." },
+      { name: "Chefchaouen", coords: [-5.2636, 35.1688], desc: "The blue city painted in dreamlight — every alley a photograph." },
+      { name: "Essaouira", coords: [-9.7595, 31.5085], desc: "A wind-battered Atlantic port of whitewashed walls and blue boats." },
+      { name: "Ifrane", coords: [-5.1118, 33.5228], desc: "Morocco's unlikely alpine town — cedar forests, snow in winter, and Barbary macaques." },
+      { name: "Imsouane", coords: [-9.8167, 30.8333], desc: "A tiny fishing village with one of Africa's longest waves and very little else." },
+      { name: "Marrakech", coords: [-7.9811, 31.6295], desc: "Djemaa el-Fna at dusk — the world's greatest open-air theatre, ancient and relentless." },
+      { name: "Meknes", coords: [-5.5472, 33.8951], desc: "The imperial city that history overlooked, all the more extraordinary for it." },
+      { name: "Merzouga", coords: [-4.0084, 31.0998], desc: "The gateway to the Erg Chebbi dunes — the Sahara at its most photogenic." },
+      { name: "Ourzazate", coords: [-6.8934, 30.9189], desc: "The door to the desert — kasbah walls glowing gold against the Atlas." },
+      { name: "Fez", coords: [-4.9998, 34.0181], desc: "The world's largest living medieval city — a labyrinth of craft and 1,200 years of continuity." }
+    ]
+  },
   "Egypt": {
     label: "Africa · North",
     desc: "The pyramids at the edge of Cairo's smog and the Nile at first light — Egypt is mythology made stone.",
     photos: 229, regions: 4, year: 2020,
     pins: [
-      { name: "White Desert", coords: [27.3833, 27.7167], desc: "Chalk formations rising from flat sand — the Egypt that exists entirely outside the usual itinerary." }
+      { name: "White Desert", coords: [27.3833, 27.7167], desc: "Chalk formations rising from flat sand — the Egypt that exists entirely outside the usual itinerary." },
+      { name: "Abu Simbel", coords: [31.6258, 22.3372], desc: "Ramesses II carved into the cliff face — moved stone by stone to save it from the rising Nile." },
+      { name: "Sinai", coords: [33.9750, 28.5388], desc: "Desert mountains meeting the Red Sea — one of earth's great convergences of landscape and colour." },
+      { name: "Cairo", coords: [31.2357, 30.0444], desc: "A city of 20 million living alongside 5,000 years of history — overwhelming and extraordinary." },
+      { name: "Giza", coords: [31.1342, 29.9773], desc: "The last wonder of the ancient world — no photograph prepares you for the scale of it." },
+      { name: "Luxor", coords: [32.6396, 25.6872], desc: "The world's greatest open-air museum — temples, tombs, and the Nile at first light." },
+      { name: "Nile", coords: [32.8998, 26.8206], desc: "The river that made civilisation possible — still the spine of the country after five millennia." },
+      { name: "Aswan", coords: [32.8998, 24.0889], desc: "The gentlest city on the Nile — Nubian colour, feluccas at sunset, and the cataract below." }
+    ]
+  },
+  "Türkiye": {
+    label: "Europe · East / Asia",
+    desc: "Cappadocia's fairy chimneys and Istanbul's layered history — Türkiye straddles worlds, literally and culturally.",
+    photos: 234, regions: 6, year: 2020,
+    pins: [
+      { name: "Fethiye", coords: [29.1167, 36.6219], desc: "Turquoise waters and ancient Lycian tombs carved into the cliff face above the harbour." },
+      { name: "Kaş", coords: [29.6400, 36.2014], desc: "A tiny Aegean town of bougainvillea, clear water, and boats going nowhere slowly." }
+    ]
+  },
+  "UAE": {
+    label: "Middle East",
+    desc: "Dubai's vertical ambition and Abu Dhabi's quieter grandeur — the UAE is the future arriving ahead of schedule.",
+    photos: 88, regions: 2, year: 2021,
+    pins: [
+      { name: "Dubai", coords: [55.2708, 25.2048], desc: "A skyline that changed what cities thought was possible — audacious and entirely itself." },
+      { name: "Abu Dhabi", coords: [54.3773, 24.4539], desc: "Sheikh Zayed Mosque — white marble and silence at a scale that stops conversation." }
+    ]
+  },
+  "Oman": {
+    label: "Middle East",
+    desc: "Wadis carved into limestone and dhow harbours at dusk — Oman is the Arab world at its most serene.",
+    photos: 183, regions: 5, year: 2021,
+    pins: [
+      { name: "Musandam", coords: [56.2639, 26.2000], desc: "Fjords in Arabia — dramatic limestone cliffs dropping into the Strait of Hormuz." },
+      { name: "Muscat", coords: [58.5922, 23.5880], desc: "A capital of whitewashed elegance built between desert mountains and the Gulf of Oman." },
+      { name: "Salalah", coords: [54.0924, 17.0151], desc: "Arabia's green secret — monsoon mists and frankincense trees in the deep south." }
     ]
   }
 };
@@ -81,17 +162,31 @@ const visitedCountries = {
 // ─── ISO numeric ID → country name ────────────────────────────────────────
 const countryNameMap = {
   "388": "Jamaica",
+  "484": "Mexico",
+  "170": "Colombia",
+  "218": "Ecuador",
   "068": "Bolivia",
   "604": "Peru",
-  "818": "Egypt"
+  "504": "Morocco",
+  "818": "Egypt",
+  "792": "Türkiye",
+  "784": "UAE",
+  "512": "Oman"
 };
 
 // ─── Country → world region ────────────────────────────────────────────────
 const visitedCountryToRegion = {
   "Jamaica": "Central America & Caribbean",
+  "Mexico": "North America",
+  "Colombia": "South America",
+  "Ecuador": "South America",
   "Bolivia": "South America",
   "Peru": "South America",
-  "Egypt": "Africa"
+  "Morocco": "Africa",
+  "Egypt": "Africa",
+  "Türkiye": "Europe",
+  "UAE": "West/Central Asia",
+  "Oman": "West/Central Asia"
 };
 
 // ─── Setup ─────────────────────────────────────────────────────────────────
