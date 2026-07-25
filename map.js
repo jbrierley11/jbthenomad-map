@@ -144,7 +144,8 @@ const visitedCountries = {
     photos: 88, regions: 2, year: 2021,
     pins: [
       { name: "Dubai", coords: [55.2708, 25.2048], desc: "A skyline that changed what cities thought was possible — audacious and entirely itself." },
-      { name: "Abu Dhabi", coords: [54.3773, 24.4539], desc: "Sheikh Zayed Mosque — white marble and silence at a scale that stops conversation." }
+      { name: "Abu Dhabi", coords: [54.3773, 24.4539], desc: "Sheikh Zayed Mosque — white marble and silence at a scale that stops conversation." },
+      { name: "Sharjah", coords: [55.8500, 25.1000], desc: "The UAE's cultural capital — desert dunes, art museums, and a quieter side of the Emirates." }
     ]
   },
   "Oman": {
