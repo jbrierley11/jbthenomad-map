@@ -154,6 +154,7 @@ const visitedCountries = {
     pins: [
       { name: "Musandam", coords: [56.2639, 26.2000], desc: "Fjords in Arabia — dramatic limestone cliffs dropping into the Strait of Hormuz." },
       { name: "Muscat", coords: [58.5922, 23.5880], desc: "A capital of whitewashed elegance built between desert mountains and the Gulf of Oman." },
+      { name: "Nizwa", coords: [57.5333, 22.9333], desc: "Oman's ancient interior capital — a great round fort, a date souk, and the stillness of the mountains beyond." },
       { name: "Salalah", coords: [54.0924, 17.0151], desc: "Arabia's green secret — monsoon mists and frankincense trees in the deep south." }
     ]
   }
