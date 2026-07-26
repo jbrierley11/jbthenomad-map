@@ -176,6 +176,7 @@ const visitedCountries = {
       { name: "Astana", coords: [71.4460, 51.1801], desc: "A futurist capital built from scratch on the steppe — one of the world's most architecturally surreal cities." }
     ]
   },
+  "Türkiye": {
     label: "Europe · East / Asia",
     desc: "Cappadocia's fairy chimneys and Istanbul's layered history — Türkiye straddles worlds, literally and culturally.",
     photos: 234, regions: 6, year: 2020,
