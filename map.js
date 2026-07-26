@@ -21,12 +21,12 @@ const regions = {
     bounds: [[-18, -36], [52, 38]]
   },
   "Europe": {
-    countries: ["Türkiye"],
+    countries: ["Türkiye", "Greece", "Italy"],
     visited: true,
     bounds: [[-11, 34], [42, 72]]
   },
   "West/Central Asia": {
-    countries: ["UAE", "Oman"],
+    countries: ["UAE", "Oman", "Kyrgyzstan", "Kazakhstan"],
     visited: true,
     bounds: [[24, 0], [90, 52]]
   },
@@ -129,7 +129,53 @@ const visitedCountries = {
       { name: "Aswan", coords: [32.8998, 24.0889], desc: "The gentlest city on the Nile — Nubian colour, feluccas at sunset, and the cataract below." }
     ]
   },
-  "Türkiye": {
+  "Greece": {
+    label: "Europe · South",
+    desc: "Cycladic whitewash and Byzantine ruins — Greece is a meditation on light, stone, and the passage of time.",
+    photos: 211, regions: 5, year: 2018,
+    pins: [
+      { name: "Athens", coords: [23.7275, 37.9838], desc: "Three thousand years of Western civilisation compressed into one extraordinary hilltop city." },
+      { name: "Milos", coords: [24.4395, 36.7219], desc: "Volcanic sea caves, coloured fishing villages, and the most dramatic coastline in the Cyclades." },
+      { name: "Paros", coords: [25.1489, 37.0853], desc: "A Cycladic island that balances beauty and livability better than almost any other." }
+    ]
+  },
+  "Italy": {
+    label: "Europe · South",
+    desc: "Dolomite peaks and crumbling Roman grandeur — Italy is beauty in its most unself-conscious form.",
+    photos: 312, regions: 7, year: 2017,
+    pins: [
+      { name: "Milan", coords: [9.1859, 45.4654], desc: "Fashion, finance, and the Last Supper — Italy's most forward-looking city, with the Duomo at its heart." }
+    ]
+  },
+  "Kyrgyzstan": {
+    label: "Central Asia",
+    desc: "Nomadic yurt camps and the Tian Shan mountains — Kyrgyzstan is one of the last truly wild frontiers.",
+    photos: 201, regions: 5, year: 2022,
+    pins: [
+      { name: "Burana", coords: [74.8000, 42.7333], desc: "A lone minaret rising from the steppe — the last remnant of the ancient Silk Road city of Balasagun." },
+      { name: "Song Kol", coords: [75.1500, 41.8333], desc: "A high alpine lake at 3,016 metres ringed by yurt camps and open steppe." },
+      { name: "Issyk Kul", coords: [77.0000, 42.4500], desc: "The world's second largest alpine lake — warm enough to swim, dramatic enough to command silence." },
+      { name: "Skazka", coords: [77.5833, 42.1167], desc: "The Fairy Tale Canyon — eroded red clay formations on the southern shore of Issyk Kul." },
+      { name: "Barskoon", coords: [78.2333, 42.1333], desc: "A waterfall canyon descending from the Tian Shan peaks into the Issyk Kul basin." },
+      { name: "Jeti Oguz", coords: [78.2000, 42.3500], desc: "Seven red sandstone bulls rising from a green valley — Kyrgyzstan's most iconic natural formation." },
+      { name: "Karakol", coords: [78.3936, 42.4897], desc: "The gateway to the eastern Tian Shan — a compact mountain town with a Russian-era wooden church." },
+      { name: "Altyn Arashan", coords: [78.5167, 42.5167], desc: "A remote hot spring valley accessible only by foot or horse — the mountains at their most undisturbed." },
+      { name: "Kochkor", coords: [75.7500, 42.2167], desc: "A quiet steppe town famous for its shyrdak felt rugs and the gateway to Song Kol lake." }
+    ]
+  },
+  "Kazakhstan": {
+    label: "Central Asia",
+    desc: "Endless steppe broken by canyon lands and Soviet relics — Kazakhstan defies every expectation.",
+    photos: 167, regions: 4, year: 2022,
+    pins: [
+      { name: "Charyn", coords: [79.0833, 43.3500], desc: "Kazakhstan's answer to the Grand Canyon — a 150-metre deep canyon of orange rock formations." },
+      { name: "Saty", coords: [78.9667, 43.0833], desc: "A remote mountain village at the gateway to the Kolsai lakes and Charyn Canyon." },
+      { name: "Kolsai", coords: [78.9833, 43.0500], desc: "Three glacial lakes stacked in a spruce-forested canyon in the Tian Shan foothills." },
+      { name: "Altyn Emel", coords: [78.6333, 43.7167], desc: "A vast national park of singing dunes, wild horses, and ancient Scythian burial mounds." },
+      { name: "Almaty", coords: [76.8512, 43.2220], desc: "The former capital — mountains rising directly above the city, more European than Central Asian in feel." },
+      { name: "Astana", coords: [71.4460, 51.1801], desc: "A futurist capital built from scratch on the steppe — one of the world's most architecturally surreal cities." }
+    ]
+  },
     label: "Europe · East / Asia",
     desc: "Cappadocia's fairy chimneys and Istanbul's layered history — Türkiye straddles worlds, literally and culturally.",
     photos: 234, regions: 6, year: 2020,
@@ -171,9 +217,13 @@ const countryNameMap = {
   "604": "Peru",
   "504": "Morocco",
   "818": "Egypt",
+  "300": "Greece",
+  "380": "Italy",
   "792": "Türkiye",
   "784": "UAE",
-  "512": "Oman"
+  "512": "Oman",
+  "417": "Kyrgyzstan",
+  "398": "Kazakhstan"
 };
 
 // ─── Country → world region ────────────────────────────────────────────────
@@ -186,9 +236,13 @@ const visitedCountryToRegion = {
   "Peru": "South America",
   "Morocco": "Africa",
   "Egypt": "Africa",
+  "Greece": "Europe",
+  "Italy": "Europe",
   "Türkiye": "Europe",
   "UAE": "West/Central Asia",
-  "Oman": "West/Central Asia"
+  "Oman": "West/Central Asia",
+  "Kyrgyzstan": "West/Central Asia",
+  "Kazakhstan": "West/Central Asia"
 };
 
 // ─── Setup ─────────────────────────────────────────────────────────────────
