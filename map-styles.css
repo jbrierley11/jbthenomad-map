@@ -38,38 +38,38 @@
   height: 100%;
 }
 
-#jbn-map-root .sphere { fill: #0a0e1a; }
-#jbn-map-root .graticule { fill: none; stroke: rgba(201,168,76,0.06); stroke-width: 0.4; }
+#jbn-map-root .sphere { fill: #12172a; }
+#jbn-map-root .graticule { fill: none; stroke: rgba(201,168,76,0.10); stroke-width: 0.4; }
 
 #jbn-map-root .country {
-  fill: #1a1710;
-  stroke: #2a2520;
+  fill: #252118;
+  stroke: #3a342a;
   stroke-width: 0.4;
   cursor: default;
   transition: fill 0.25s ease, stroke 0.25s ease;
 }
 
 #jbn-map-root .country.visited {
-  fill: #221e12;
-  stroke: #3a3020;
+  fill: #3a3018;
+  stroke: #5a4a28;
   cursor: pointer;
 }
 
 #jbn-map-root .country.visited:hover,
 #jbn-map-root .country.active {
-  fill: #2d2614;
+  fill: #4a3c1e;
   stroke: #c9a84c;
   stroke-width: 0.8;
 }
 
 #jbn-map-root .country.dimmed {
-  fill: #131110 !important;
-  stroke: #222018 !important;
+  fill: #1c1914 !important;
+  stroke: #2e2920 !important;
   opacity: 0.5;
 }
 
 #jbn-map-root .country.region-active {
-  fill: #332a1a !important;
+  fill: #4a3c20 !important;
   stroke: #c9a84c !important;
   stroke-width: 0.8 !important;
   opacity: 1;
@@ -77,7 +77,7 @@
 
 #jbn-map-root .country.region-active:hover,
 #jbn-map-root .country.region-hover {
-  fill: #3d3020 !important;
+  fill: #5a4828 !important;
   stroke: #c9a84c !important;
   stroke-width: 1.2 !important;
   opacity: 1;
