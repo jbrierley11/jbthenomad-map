@@ -551,3 +551,85 @@
     aspect-ratio: 4 / 3;
   }
 }
+
+/* ===========================================================
+   FEATURED DESTINATIONS ROW (homepage, full-width below map)
+   Webflow structure: body > .featured-dest > label + collection list
+   =========================================================== */
+
+.featured-dest {
+  background: #0e0c0a;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  padding: 56px 3rem 72px;
+  box-sizing: border-box;
+}
+
+.featured-dest-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 1.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+}
+
+.featured-dest .w-dyn-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.dest-card {
+  display: block;
+  text-decoration: none;
+  color: #f5f0e8;
+  overflow: hidden;
+}
+
+.dest-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: filter 0.3s ease;
+}
+
+.dest-card:hover .dest-thumb {
+  filter: brightness(1);
+}
+
+.dest-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: #f5f0e8;
+  margin-top: 0.8rem;
+  transition: color 0.2s ease;
+}
+
+.dest-card:hover .dest-title {
+  color: #c9a84c;
+}
+
+.dest-country {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8a8078;
+  margin-top: 0.35rem;
+}
+
+@media (max-width: 767px) {
+  .featured-dest {
+    padding: 40px 24px 56px;
+  }
+  .featured-dest .w-dyn-items {
+    grid-template-columns: 1fr;
+  }
+}
