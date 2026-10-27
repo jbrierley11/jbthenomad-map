@@ -400,7 +400,7 @@ function selectRegion(regionName) {
     return visitedCountryToRegion[getCountryName(d.id)] === regionName;
   });
   d3.selectAll(".pin-group").style("display","none");
-  zoomToBounds(regions[regionName].bounds);
+  zoomToRegion(regionName);
 }
 
 // ─── Reset to region ────────────────────────────────────────────────────────
@@ -417,7 +417,7 @@ function resetToRegion() {
   d3.selectAll(".country").classed("active", false);
   d3.selectAll(".pin-group").style("display","none");
   setBreadcrumb({ region: currentRegion });
-  zoomToBounds(regions[currentRegion].bounds);
+  zoomToRegion(currentRegion);
 }
 
 // ─── Select country ─────────────────────────────────────────────────────────
@@ -473,26 +473,45 @@ function goToDestination(pinName) {
 }
 
 // ─── Zoom helpers ────────────────────────────────────────────────────────────
-function zoomToFeature(feature) {
-  const [[x0,y0],[x1,y1]] = path.bounds(feature);
-  const dx=x1-x0, dy=y1-y0;
-  const cx=(x0+x1)/2, cy=(y0+y1)/2;
-  const scale = Math.max(1.5, Math.min(14, 0.75/Math.max(dx/width, dy/height)));
-  const tx=width/2-scale*cx, ty=height/2-scale*cy;
-  g.transition().duration(850).ease(d3.easeCubicInOut)
+// Visible area of the map = container minus whatever the fixed navbar covers.
+function topInset() {
+  const nav = document.querySelector(".w-nav, .navbar");
+  if (!nav) return 0;
+  const navBottom = nav.getBoundingClientRect().bottom;
+  const mapTop = container.getBoundingClientRect().top;
+  return Math.max(0, Math.min(height * 0.3, navBottom - mapTop));
+}
+
+// Fit a projected box [[x0,y0],[x1,y1]] into the visible area.
+function fitBox([[x0,y0],[x1,y1]], fill, minScale, maxScale, duration) {
+  const top = topInset() + 16;          // breathing room under the navbar
+  const bottom = 24;
+  const availW = width, availH = Math.max(100, height - top - bottom);
+  const dx = Math.abs(x1-x0), dy = Math.abs(y1-y0);
+  const cx = (x0+x1)/2, cy = (y0+y1)/2;
+  const scale = Math.max(minScale, Math.min(maxScale, fill / Math.max(dx/availW, dy/availH)));
+  const tx = availW/2 - scale*cx;
+  const ty = top + availH/2 - scale*cy;
+  g.transition().duration(duration).ease(d3.easeCubicInOut)
    .attr("transform",`translate(${tx},${ty}) scale(${scale})`);
 }
 
-function zoomToBounds(bounds) {
-  const [[west,south],[east,north]] = bounds;
-  const p0=projection([west,north]), p1=projection([east,south]);
-  if (!p0||!p1) return;
-  const dx=p1[0]-p0[0], dy=p1[1]-p0[1];
-  const cx=(p0[0]+p1[0])/2, cy=(p0[1]+p1[1])/2;
-  const scale = Math.max(1.2, Math.min(10, 0.78/Math.max(Math.abs(dx)/width, Math.abs(dy)/height)));
-  const tx=width/2-scale*cx, ty=height/2-scale*cy;
-  g.transition().duration(850).ease(d3.easeCubicInOut)
-   .attr("transform",`translate(${tx},${ty}) scale(${scale})`);
+function zoomToFeature(feature) {
+  fitBox(path.bounds(feature), 0.75, 1.5, 14, 850);
+}
+
+// Region box = hand-set bounds expanded to include every visited country in it.
+function zoomToRegion(regionName) {
+  const [[west,south],[east,north]] = regions[regionName].bounds;
+  const p0 = projection([west,north]), p1 = projection([east,south]);
+  let x0 = Math.min(p0[0],p1[0]), y0 = Math.min(p0[1],p1[1]);
+  let x1 = Math.max(p0[0],p1[0]), y1 = Math.max(p0[1],p1[1]);
+  d3.selectAll(".country.visited").each(function(d) {
+    if (visitedCountryToRegion[getCountryName(d.id)] !== regionName) return;
+    const [[a,b],[c,e]] = path.bounds(d);
+    x0 = Math.min(x0,a); y0 = Math.min(y0,b); x1 = Math.max(x1,c); y1 = Math.max(y1,e);
+  });
+  fitBox([[x0,y0],[x1,y1]], 0.85, 1.2, 10, 850);
 }
 
 // ─── Reset view ────────────────────────────────────────────────────────────
